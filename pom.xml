@@ -140,8 +140,8 @@
         
         <!-- Bukkit API -->
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
             <version>1.13.1-R0.1-SNAPSHOT</version>
             <type>jar</type>
             <scope>provided</scope>
@@ -178,11 +178,12 @@
             <artifactId>updater</artifactId>
             <version>2.4</version>
         </dependency>
-      <dependency>
-        <groupId>com.mojang</groupId>
-        <artifactId>AccountsClient</artifactId>
-        <version>unspecified</version>
-      </dependency>
+        <dependency>
+            <groupId>com.mojang</groupId>
+            <artifactId>AccountsClient</artifactId>
+            <scope>compile</scope>
+            <version>LATEST</version>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
@@ -193,13 +194,10 @@
             <id>gravity-repo</id>
             <url>http://repo.gravitydevelopment.net</url>
         </repository>
-        
-        <!-- Bukkit API repo -->
         <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+            <id>ac-repo</id>
+            <url>https://raw.github.com/mazentheamazin/AccountsClient/mvn-repo/</url>
         </repository>
-        
     </repositories>
     <profiles>
         <profile>
