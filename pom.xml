@@ -13,19 +13,11 @@
         <system>GitHub</system>
         <url>https://github.com/PEXPlugins/PermissionsEx/issues</url>
     </issueManagement>
-    <distributionManagement>
-        <repository>
-            <id>pex-repo</id>
-            <name>PermissionsEx Repository</name>
-            <url>http://pex-repo.aoeu.xyz/</url>
-        </repository>
-    </distributionManagement>
     <scm>
         <connection>scm:git:git://github.com/PEXPlugins/PermissionsEx.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/PEXPlugins/PermissionsEx.git</developerConnection>
         <url>https://github.com/PEXPlugins/PermissionsEx.git</url>
     </scm>
-
     <build>
         <resources>
             <resource>
@@ -39,8 +31,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.0.2</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
           <plugin>
@@ -105,17 +97,30 @@
         </dependency>
         <dependency>
             <groupId>com.mojang</groupId>
-            <artifactId>AccountsClient</artifactId>
-            <scope>compile</scope>
-            <version>LATEST</version>
+            <artifactId>accounts-client</artifactId>
+            <version>1.0.2</version>
         </dependency>
     </dependencies>
     <repositories>
         <repository>
-            <id>ac-repo</id>
-            <url>https://raw.github.com/mazentheamazin/AccountsClient/mvn-repo/</url>
+            <id>MinestarNexus</id>
+            <url>http://nexus.outi-networks.de/content/groups/public/</url>
         </repository>
     </repositories>
+    <distributionManagement>
+        <!-- use the following if you're not using a snapshot version. -->
+        <repository>
+            <id>minestarDeployment</id>
+            <name>Internal Releases</name>
+            <url>http://nexus.outi-networks.de/content/repositories/releases/</url>
+        </repository>
+        <!-- use the following if you ARE using a snapshot version. -->
+        <snapshotRepository>
+            <id>minestarDeployment</id>
+            <name>Internal Releases</name>
+            <url>http://nexus.outi-networks.de/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
     <profiles>
         <profile>
             <id>release</id>
