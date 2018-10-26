@@ -56,10 +56,6 @@
                   <createDependencyReducedPom>false</createDependencyReducedPom>
                   <relocations>
                     <relocation>
-                      <pattern>net.gravitydevelopment.updater</pattern>
-                      <shadedPattern>ru.tehkode.libs.net.gravitydevelopment.updater</shadedPattern>
-                    </relocation>
-                    <relocation>
                       <pattern>org.apache</pattern>
                       <shadedPattern>ru.tehkode.libs.org.apache</shadedPattern>
                       <excludes>
@@ -79,74 +75,16 @@
               </execution>
             </executions>
           </plugin>
-          <plugin>
-            <groupId>org.jboss.seven2six</groupId>
-            <artifactId>seven2six</artifactId>
-            <version>1.1.Final</version>
-            <executions>
-              <!-- run after "compile", lets your artifact work on 1.6 -->
-              <!--
-              <execution>
-                <id>weave</id>
-                <phase>process-classes</phase>
-                <goals>
-                  <goal>transform</goal>
-                </goals>
-              </execution>
-              -->
-              <!-- run after "test-compile", lets you run your tests on 1.6 -->
-              <!--
-              <execution>
-                <id>weave-tests</id>
-                <phase>process-test-classes</phase>
-                <goals>
-                  <goal>transform</goal>
-                </goals>
-                <configuration>
-                  <outputDirectory>${project.build.testOutputDirectory}</outputDirectory>
-                </configuration>
-              </execution>
-              -->
-            </executions>
-          </plugin>
-          <!--
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>animal-sniffer-maven-plugin</artifactId>
-            <version>1.11</version>
-            <configuration>
-              <ignores>
-                <ignore>java.lang.Throwable</ignore>
-              </ignores>
-              <signature>
-                <groupId>org.codehaus.mojo.signature</groupId>
-                <artifactId>java16</artifactId>
-                <version>1.0</version>
-              </signature>
-            </configuration>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>check</goal>
-                </goals>
-                <phase>test</phase>
-              </execution>
-            </executions>
-          </plugin>
-          -->
         </plugins>
     </build>
     <dependencies>
-        
-        <!-- Bukkit API -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
-            <version>1.13.1-R0.1-SNAPSHOT</version>
+            <version>1.13.2-R0.1-SNAPSHOT</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
-        
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
@@ -154,14 +92,6 @@
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
-        <!-- 'netevents' depends on Bukkit 1.7.2-R0.1 in the removed old Bukkit repository.
-        <dependency>
-            <groupId>com.zachsthings</groupId>
-            <artifactId>netevents</artifactId>
-            <version>1.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit-dep</artifactId>
@@ -174,11 +104,6 @@
             <version>1.4</version>
         </dependency>
         <dependency>
-            <groupId>net.gravitydevelopment.updater</groupId>
-            <artifactId>updater</artifactId>
-            <version>2.4</version>
-        </dependency>
-        <dependency>
             <groupId>com.mojang</groupId>
             <artifactId>AccountsClient</artifactId>
             <scope>compile</scope>
@@ -186,14 +111,6 @@
         </dependency>
     </dependencies>
     <repositories>
-        <repository>
-            <id>pex-repo</id>
-            <url>http://pex-repo.aoeu.xyz</url>
-        </repository>
-        <repository>
-            <id>gravity-repo</id>
-            <url>http://repo.gravitydevelopment.net</url>
-        </repository>
         <repository>
             <id>ac-repo</id>
             <url>https://raw.github.com/mazentheamazin/AccountsClient/mvn-repo/</url>
